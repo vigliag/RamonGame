@@ -19,15 +19,11 @@ public class Ramon extends Game {
 	private SpriteBatch batch;
 	private Texture texture;
 	private Sprite sprite;
-	
+	private MainScreen mainScreen;
 	@Override
 	public void create() {
-		setScreen(new MainScreen());
-		float w = Gdx.graphics.getWidth();
-		float h = Gdx.graphics.getHeight();
-		
-		//camera = new OrthographicCamera(1, h/w);
-		//batch = new SpriteBatch();
+		mainScreen = new MainScreen(this);
+		setScreen(mainScreen);
 		
 	}
 

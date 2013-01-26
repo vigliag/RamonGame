@@ -1,11 +1,27 @@
 package com.ggj13.ramon.screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.ggj13.ramon.Ramon;
 
 public class MainScreen implements Screen {
+	private Ramon game;
+	private OrthographicCamera camera;
+	private SpriteBatch batch;
+	
+	public MainScreen(Ramon game) {
+		this.game = game;
 
-	public MainScreen() {
-		// TODO Auto-generated constructor stub
+		float w = Gdx.graphics.getWidth();
+		float h = Gdx.graphics.getHeight();
+		
+		camera = new OrthographicCamera(1, h/w);
+		batch = new SpriteBatch();
+		
+		
+		
 	}
 
 	@Override
