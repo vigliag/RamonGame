@@ -1,5 +1,7 @@
 package com.ggj13.ramon;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -13,6 +15,8 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.ggj13.ramon.screens.MainScreen;
 import com.ggj13.ramon.screens.SplashScreen;
 
+
+
 public class Ramon extends Game {
 	
 	private OrthographicCamera camera;
@@ -20,39 +24,17 @@ public class Ramon extends Game {
 	private Texture texture;
 	private Sprite sprite;
 	private MainScreen mainScreen;
+	
+	
 	@Override
 	public void create() {
+		
 		mainScreen = new MainScreen(this);
 		setScreen(mainScreen);
 		
 	}
 
-	@Override
-	public void dispose() {
-		batch.dispose();
-		texture.dispose();
-	}
+	
 
-	@Override
-	public void render() {		
-		Gdx.gl.glClearColor(1, 1, 1, 1);
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-		
-		batch.setProjectionMatrix(camera.combined);
-		batch.begin();
-		sprite.draw(batch);
-		batch.end();
-	}
-
-	@Override
-	public void resize(int width, int height) {
-	}
-
-	@Override
-	public void pause() {
-	}
-
-	@Override
-	public void resume() {
-	}
+	
 }
